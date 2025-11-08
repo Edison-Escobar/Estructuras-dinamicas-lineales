@@ -11,7 +11,7 @@ namespace Estructuras_dinámicas_lineales
         public class Node
         {
             public T Value;
-            public Node prev;
+            public Node Prev;
             public Node Next;
 
             public Node(T value)
@@ -19,5 +19,37 @@ namespace Estructuras_dinámicas_lineales
                 Value = value;
             }
         }
+
+        private Node Head;
+        private Node Current;
+        public int Count { get; set; }
+        public int Capacity { get; set; }
+        public bool CanUndo => Current?.Prev != null;
+        public bool CanRendo => Current?.Next != null;
+
+        public HistoryList(T inicialstate)
+        {
+            Head = Current = new Node(inicialstate);
+            Count = 1;
+        }
+
+        public void Push (T value)
+        {
+            var newNode = new Node(value);
+            if (Current.Next != null) 
+            {
+                Current.Next.Prev = null;
+                Current.Next = null;
+            }
+
+            newNode.Prev = Current;
+            Current.Next = newNode;
+            Current = newNode;
+            Count++;
+
+        }
+
+
+
     }
 }
