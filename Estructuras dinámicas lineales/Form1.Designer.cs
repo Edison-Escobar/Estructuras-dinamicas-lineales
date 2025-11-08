@@ -41,6 +41,7 @@
             TxtMult.Name = "TxtMult";
             TxtMult.Size = new Size(560, 163);
             TxtMult.TabIndex = 0;
+            TxtMult.Text = "(documento vacío)";
             // 
             // BtnGuardarEstado
             // 
@@ -80,6 +81,7 @@
             Controls.Add(TxtMult);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }

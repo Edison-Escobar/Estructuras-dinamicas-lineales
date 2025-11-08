@@ -6,5 +6,10 @@ namespace Estructuras_dinámicas_lineales
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
