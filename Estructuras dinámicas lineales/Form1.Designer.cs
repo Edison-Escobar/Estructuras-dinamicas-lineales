@@ -39,9 +39,9 @@
             TxtMult.Location = new Point(179, 24);
             TxtMult.Multiline = true;
             TxtMult.Name = "TxtMult";
+            TxtMult.PlaceholderText = "Documento Vacio";
             TxtMult.Size = new Size(560, 163);
             TxtMult.TabIndex = 0;
-            TxtMult.Text = "(documento vacío)";
             // 
             // BtnGuardarEstado
             // 
@@ -51,6 +51,7 @@
             BtnGuardarEstado.TabIndex = 1;
             BtnGuardarEstado.Text = "Guardar Estado";
             BtnGuardarEstado.UseVisualStyleBackColor = true;
+            BtnGuardarEstado.Click += BtnGuardarEstado_Click;
             // 
             // BtnUndo
             // 
@@ -60,6 +61,7 @@
             BtnUndo.TabIndex = 2;
             BtnUndo.Text = "Undo";
             BtnUndo.UseVisualStyleBackColor = true;
+            BtnUndo.Click += BtnUndo_Click;
             // 
             // BtnRedo
             // 
@@ -69,6 +71,7 @@
             BtnRedo.TabIndex = 3;
             BtnRedo.Text = "Redo";
             BtnRedo.UseVisualStyleBackColor = true;
+            BtnRedo.Click += BtnRedo_Click;
             // 
             // Form1
             // 

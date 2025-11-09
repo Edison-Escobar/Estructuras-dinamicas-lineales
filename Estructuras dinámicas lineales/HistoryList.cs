@@ -47,8 +47,38 @@ namespace Estructuras_dinámicas_lineales
             Current = newNode;
             Count++;
 
+            while (Count > Capacity && Head != null)
+            {
+                Head = Head.Next;
+                if(Head != null)
+                {
+                    Head.Prev = null;
+                }
+                Count--;
+
+            }
+
         }
 
+        public T UndoOrdefault(T defaultvalue)
+        {
+            if (CanUndo)
+            {
+                Current = Current.Prev;
+                return Current.Value;
+            }
+            return defaultvalue;
+        }
+
+        public T RedoOrdefault(T defaultvalue)
+        {
+            if (CanRendo)
+            {
+                Current = Current.Next;
+                return Current.Value;
+            }
+            return defaultvalue;
+        }
 
 
     }
